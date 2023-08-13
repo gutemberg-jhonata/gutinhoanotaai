@@ -5,3 +5,5 @@ This project was developed by using the following technologies:
 * Spring Boot
 * Maven
 * Lombok
+* Model Mapper
+* Springdoc

@@ -1,8 +1,8 @@
 package com.gutinhotech.gutinhoanotaai.domain.usecase;
 
 import java.time.OffsetDateTime;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -43,11 +43,10 @@ public class LoadAllCategoriesUseCaseTest {
 
     @Test
     public void When_perform_Then_should_return_a_set_of_categories() {
-        Set<Category> categories = sut.perform();
+        List<Category> categories = sut.perform();
         
-        final var iterator = categories.iterator();
-        final var category1 = iterator.next();
-        final var category2 = iterator.next();
+        final var category1 = categories.get(0);
+        final var category2 = categories.get(1);
         assertEquals("any_category_name_1", category1.getName());
         assertInstanceOf(OffsetDateTime.class, category1.getCreatedAt());
         assertNull(category1.getUpdatedAt());
@@ -56,13 +55,10 @@ public class LoadAllCategoriesUseCaseTest {
         assertNull(category2.getUpdatedAt());
     }
 
-    private Set<Category> mockCategories() {
+    private List<Category> mockCategories() {
         Category category1 = new Category("any_category_name_1");
         Category category2 = new Category("any_category_name_2");
-        Set<Category> categories = new HashSet<>();
-        categories.add(category1);
-        categories.add(category2);
-        return categories;
+        return Arrays.asList(category1, category2);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.gutinhotech.gutinhoanotaai.main;
+package com.gutinhotech.gutinhoanotaai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

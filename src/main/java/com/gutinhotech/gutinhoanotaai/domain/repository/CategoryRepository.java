@@ -1,11 +1,9 @@
 package com.gutinhotech.gutinhoanotaai.domain.repository;
 
-import java.util.Set;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
 
-public interface CategoryRepository {
-        
-    public Set<Category> findAll();
+public interface CategoryRepository extends JpaRepository<Category, Long>{
     
 }

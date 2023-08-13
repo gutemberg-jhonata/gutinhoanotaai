@@ -14,9 +14,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.Mockito.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import java.util.ArrayList;
+import java.util.List;
 import com.gutinhotech.gutinhoanotaai.api.assembler.CategoryAssembler;
 import com.gutinhotech.gutinhoanotaai.api.entity.output.CategoryOutput;
 import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
@@ -36,13 +35,13 @@ public class LoadAllCategoriesControllerTest {
     private LoadAllCategoriesController sut;
     private Category category1;
     private Category category2;
-    private Set<Category> categories;
+    private List<Category> categories;
 
     @BeforeAll
     public void beforeAll() {
         category1 = new Category("any_category_name_1");
         category2 = new Category("any_category_name_2");
-        categories = new HashSet<>();
+        categories = new ArrayList<>();
         categories.add(category1);
         categories.add(category2);
     }
@@ -69,11 +68,10 @@ public class LoadAllCategoriesControllerTest {
 
     @Test
     public void When_perform_Then_should_return_a_set_of_category_output() {
-        Set<CategoryOutput> categoriesOutput = sut.perform();
+        List<CategoryOutput> categoriesOutput = sut.perform();
         
-        var iterator = categoriesOutput.iterator();
-        var categoryOutput1 = iterator.next();
-        var categoryOutput2 = iterator.next();
+        var categoryOutput1 = categoriesOutput.get(0);
+        var categoryOutput2 = categoriesOutput.get(1);
         Assertions.assertEquals(category1.getId(), categoryOutput1.getId());
         Assertions.assertEquals(category1.getName(), categoryOutput1.getName());
         Assertions.assertEquals(category1.getCreatedAt(), categoryOutput1.getCreatedAt());
@@ -84,7 +82,7 @@ public class LoadAllCategoriesControllerTest {
         Assertions.assertEquals(category2.getUpdatedAt(), categoryOutput2.getUpdatedAt());
     }
 
-    private Set<CategoryOutput> mockCategoriesOutput() {
+    private List<CategoryOutput> mockCategoriesOutput() {
         var categoryOutput1 = new CategoryOutput();
         categoryOutput1.setId(category1.getId());
         categoryOutput1.setName(category1.getName());
@@ -95,7 +93,7 @@ public class LoadAllCategoriesControllerTest {
         categoryOutput2.setName(category2.getName());
         categoryOutput2.setCreatedAt(category2.getCreatedAt());
         categoryOutput2.setUpdatedAt(category2.getUpdatedAt());
-        var categoriesOutput = new HashSet<CategoryOutput>();
+        var categoriesOutput = new ArrayList<CategoryOutput>();
         categoriesOutput.add(categoryOutput1);
         categoriesOutput.add(categoryOutput2);
         return categoriesOutput;
