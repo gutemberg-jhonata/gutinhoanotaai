@@ -9,72 +9,23 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.modelmapper.ModelMapper;
 
 import static org.mockito.Mockito.*;
 
-import java.time.OffsetDateTime;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
+import com.gutinhotech.gutinhoanotaai.api.assembler.CategoryAssembler;
+import com.gutinhotech.gutinhoanotaai.api.entity.output.CategoryOutput;
 import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
 import com.gutinhotech.gutinhoanotaai.domain.usecase.LoadAllCategoriesUseCase;
-
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 @ExtendWith(MockitoExtension.class)
 @TestInstance(Lifecycle.PER_CLASS)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class LoadAllCategoriesControllerTest {
-
-    @AllArgsConstructor
-    public class CategoryAssembler {
-
-        private final ModelMapper modelMapper;
-
-        public Set<CategoryOutput> toCollectionModel(Set<Category> categories) {
-            return categories.stream()
-                .map((category) -> modelMapper.map(category, CategoryOutput.class))
-                .collect(Collectors.toSet());
-        }
-
-    }
-
-    @Getter
-    @Setter
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-    public class CategoryOutput {
-    
-        private Long id;
-
-        @EqualsAndHashCode.Include
-        private String name;
-        
-        private OffsetDateTime createdAt;
-        private OffsetDateTime updatedAt;
-    
-    }
-
-    @AllArgsConstructor
-    public class LoadAllCategoriesController {
-
-        private final LoadAllCategoriesUseCase loadAllCategoriesUseCase;
-        private final CategoryAssembler categoryAssembler;
-
-        public Set<CategoryOutput> perform() {
-            return categoryAssembler.toCollectionModel(
-                loadAllCategoriesUseCase.perform()
-            );
-        }
-
-    }
 
     @Mock
     private LoadAllCategoriesUseCase loadAllCategoriesUseCase;
