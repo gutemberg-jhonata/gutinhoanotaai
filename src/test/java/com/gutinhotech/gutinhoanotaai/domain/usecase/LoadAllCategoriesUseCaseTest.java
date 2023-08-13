@@ -1,16 +1,10 @@
 package com.gutinhotech.gutinhoanotaai.domain.usecase;
 
 import java.time.OffsetDateTime;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -18,69 +12,29 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
+import com.gutinhotech.gutinhoanotaai.domain.repository.CategoryRepository;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-
 @ExtendWith(MockitoExtension.class)
 @TestInstance(Lifecycle.PER_CLASS)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class LoadCategoriesUseCaseTest {
-
-    @Getter
-    @Setter
-    @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-    class Category {
-
-        private Long id;
-
-        @EqualsAndHashCode.Include
-        private String name;
-        
-        private OffsetDateTime createdAt;
-        private OffsetDateTime updatedAt;
-
-        public Category(final String name) {
-            Objects.requireNonNull(name);
-            this.name = name;
-            this.createdAt = OffsetDateTime.now();
-        }
-
-    }
-
-    interface CategoryRepository {
-        
-        public Set<Category> findAll();
-    
-    }
-
-    @AllArgsConstructor
-    class LoadCategoriesUseCase {
-
-        private final CategoryRepository categoryRepository;
-
-        public Set<Category> perform() {
-            return categoryRepository.findAll();
-        }
-    }
+public class LoadAllCategoriesUseCaseTest {
 
     @Mock
     private CategoryRepository categoryRepository;
 
-    private LoadCategoriesUseCase sut;
+    private LoadAllCategoriesUseCase sut;
 
     @BeforeEach
     public void beforeEach() {
         when(categoryRepository.findAll()).thenReturn(mockCategories());
 
-        sut = new LoadCategoriesUseCase(categoryRepository);
+        sut = new LoadAllCategoriesUseCase(categoryRepository);
     }
    
     @Test
