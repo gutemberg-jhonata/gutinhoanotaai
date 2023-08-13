@@ -8,7 +8,7 @@ import com.gutinhotech.gutinhoanotaai.domain.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-class LoadAllCategoriesUseCase {
+public class LoadAllCategoriesUseCase {
 
     private final CategoryRepository categoryRepository;
 
