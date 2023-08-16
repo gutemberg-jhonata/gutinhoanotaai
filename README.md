@@ -20,16 +20,16 @@ This project was developed by using the following technologies:
 ## 🚀 How to use
 First clone this project:
 ```bash
-    gh repo clone gutemberg-jhonata/gutinhoanotaai
+gh repo clone gutemberg-jhonata/gutinhoanotaai
 ```
 Then start the database with the following command:
 ```bash
-    docker compose up -d
+docker compose up -d
 ```
 At last start the application:
 ```bash
-    ./mvnw package
-    java -jar target/gutinhoanotaai-0.0.1-SNAPSHOT.war
+./mvnw package
+java -jar target/gutinhoanotaai-0.0.1-SNAPSHOT.war
 ```
 
 ## 📖 Documentation
