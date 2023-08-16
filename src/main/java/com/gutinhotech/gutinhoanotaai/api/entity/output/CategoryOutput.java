@@ -3,6 +3,7 @@ package com.gutinhotech.gutinhoanotaai.api.entity.output;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import lombok.Setter;
 public class CategoryOutput {
 
     private UUID id;
+    @Schema(example = "Snacks")
     private String name;
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
