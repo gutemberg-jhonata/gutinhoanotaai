@@ -1,4 +1,4 @@
-<h1 align="center">Anota.ai</h1>
+<h1 align="center">Guto Delivery</h1>
 
 ## 🧪 Technologies
 
@@ -20,7 +20,7 @@ This project was developed by using the following technologies:
 ## 🚀 How to use
 First clone this project:
 ```bash
-gh repo clone gutemberg-jhonata/gutinhoanotaai
+gh repo clone gutemberg-jhonata/gutodelivery-api
 ```
 Then start the database with the following command:
 ```bash
