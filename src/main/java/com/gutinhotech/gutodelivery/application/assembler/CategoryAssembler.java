@@ -1,11 +1,11 @@
-package com.gutinhotech.gutodelivery.api.assembler;
+package com.gutinhotech.gutodelivery.application.assembler;
 
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import com.gutinhotech.gutodelivery.api.entity.output.CategoryOutput;
+import com.gutinhotech.gutodelivery.application.entity.output.CategoryOutput;
 import com.gutinhotech.gutodelivery.domain.entity.Category;
 
 import lombok.AllArgsConstructor;

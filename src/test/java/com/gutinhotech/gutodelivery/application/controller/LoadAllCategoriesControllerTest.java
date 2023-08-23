@@ -1,4 +1,4 @@
-package com.gutinhotech.gutodelivery.api.controller;
+package com.gutinhotech.gutodelivery.application.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,8 +16,9 @@ import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.gutinhotech.gutodelivery.api.assembler.CategoryAssembler;
-import com.gutinhotech.gutodelivery.api.entity.output.CategoryOutput;
+
+import com.gutinhotech.gutodelivery.application.assembler.CategoryAssembler;
+import com.gutinhotech.gutodelivery.application.entity.output.CategoryOutput;
 import com.gutinhotech.gutodelivery.domain.entity.Category;
 import com.gutinhotech.gutodelivery.domain.usecase.LoadAllCategoriesUseCase;
 
