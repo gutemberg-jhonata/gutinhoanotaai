@@ -1,4 +1,4 @@
-package com.gutinhotech.gutinhoanotaai.api.controller;
+package com.gutinhotech.gutodelivery.api.controller;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -16,10 +16,10 @@ import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.gutinhotech.gutinhoanotaai.api.assembler.CategoryAssembler;
-import com.gutinhotech.gutinhoanotaai.api.entity.output.CategoryOutput;
-import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
-import com.gutinhotech.gutinhoanotaai.domain.usecase.LoadAllCategoriesUseCase;
+import com.gutinhotech.gutodelivery.api.assembler.CategoryAssembler;
+import com.gutinhotech.gutodelivery.api.entity.output.CategoryOutput;
+import com.gutinhotech.gutodelivery.domain.entity.Category;
+import com.gutinhotech.gutodelivery.domain.usecase.LoadAllCategoriesUseCase;
 
 @ExtendWith(MockitoExtension.class)
 @TestInstance(Lifecycle.PER_CLASS)

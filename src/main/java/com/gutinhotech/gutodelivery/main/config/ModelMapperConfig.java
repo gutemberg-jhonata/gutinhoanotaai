@@ -1,4 +1,4 @@
-package com.gutinhotech.gutinhoanotaai.main.config;
+package com.gutinhotech.gutodelivery.main.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

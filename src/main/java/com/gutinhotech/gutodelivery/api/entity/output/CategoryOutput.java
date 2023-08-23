@@ -1,4 +1,4 @@
-package com.gutinhotech.gutinhoanotaai.api.entity.output;
+package com.gutinhotech.gutodelivery.api.entity.output;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

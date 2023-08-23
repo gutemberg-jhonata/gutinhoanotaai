@@ -1,4 +1,4 @@
-package com.gutinhotech.gutinhoanotaai.domain.entity;
+package com.gutinhotech.gutodelivery.domain.entity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;

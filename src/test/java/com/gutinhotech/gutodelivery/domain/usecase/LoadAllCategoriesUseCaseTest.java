@@ -1,4 +1,4 @@
-package com.gutinhotech.gutinhoanotaai.domain.usecase;
+package com.gutinhotech.gutodelivery.domain.usecase;
 
 import java.time.OffsetDateTime;
 import java.util.Arrays;
@@ -12,8 +12,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
-import com.gutinhotech.gutinhoanotaai.domain.repository.CategoryRepository;
+import com.gutinhotech.gutodelivery.domain.entity.Category;
+import com.gutinhotech.gutodelivery.domain.repository.CategoryRepository;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;

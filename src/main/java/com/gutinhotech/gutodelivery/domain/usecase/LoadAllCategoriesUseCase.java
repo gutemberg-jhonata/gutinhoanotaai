@@ -1,11 +1,11 @@
-package com.gutinhotech.gutinhoanotaai.domain.usecase;
+package com.gutinhotech.gutodelivery.domain.usecase;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.gutinhotech.gutinhoanotaai.domain.entity.Category;
-import com.gutinhotech.gutinhoanotaai.domain.repository.CategoryRepository;
+import com.gutinhotech.gutodelivery.domain.entity.Category;
+import com.gutinhotech.gutodelivery.domain.repository.CategoryRepository;
 
 import lombok.AllArgsConstructor;
 
