@@ -2,12 +2,14 @@ package com.gutinhotech.gutodelivery.domain.entity;
 
 import java.util.Objects;
 
+import com.gutinhotech.gutodelivery.domain.validation.ValidationHandler;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
 @EqualsAndHashCode
-public class Entity<ID extends Identifier> {
+public abstract class Entity<ID extends Identifier> {
     
     protected final ID id;
 
@@ -15,5 +17,7 @@ public class Entity<ID extends Identifier> {
         Objects.requireNonNull(id, "id is required");
         this.id = id;
     }
+
+    public abstract void validate(ValidationHandler handler);
 
 }

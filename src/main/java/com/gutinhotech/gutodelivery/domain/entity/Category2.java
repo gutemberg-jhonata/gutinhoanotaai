@@ -2,6 +2,9 @@ package com.gutinhotech.gutodelivery.domain.entity;
 
 import java.time.OffsetDateTime;
 
+import com.gutinhotech.gutodelivery.domain.validation.CategoryValidator;
+import com.gutinhotech.gutodelivery.domain.validation.ValidationHandler;
+
 import lombok.Getter;
 
 @Getter
@@ -26,6 +29,11 @@ public class Category2 extends AggregateRoot<CategoryID> {
         final var id = CategoryID.unique();
         final var now = OffsetDateTime.now();
         return new Category2(id, aName, now, null);
+    }
+
+    @Override
+    public void validate(final ValidationHandler aHandler) {
+        new CategoryValidator(this, aHandler).validate();        
     }
 
 }
