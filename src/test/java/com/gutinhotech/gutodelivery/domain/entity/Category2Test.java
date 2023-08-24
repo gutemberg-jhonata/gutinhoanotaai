@@ -12,6 +12,7 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
+import com.gutinhotech.gutodelivery.domain.AggregateRoot;
 import com.gutinhotech.gutodelivery.domain.exception.DomainException;
 import com.gutinhotech.gutodelivery.domain.validation.handler.ThrowsValidationHandler;
 

@@ -1,4 +1,4 @@
-package com.gutinhotech.gutodelivery.domain.entity;
+package com.gutinhotech.gutodelivery.domain;
 
 import java.util.Objects;
 

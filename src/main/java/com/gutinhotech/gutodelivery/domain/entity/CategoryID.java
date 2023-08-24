@@ -3,6 +3,8 @@ package com.gutinhotech.gutodelivery.domain.entity;
 import java.util.Objects;
 import java.util.UUID;
 
+import com.gutinhotech.gutodelivery.domain.Identifier;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 

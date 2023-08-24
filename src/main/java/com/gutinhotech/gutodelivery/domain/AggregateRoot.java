@@ -1,4 +1,4 @@
-package com.gutinhotech.gutodelivery.domain.entity;
+package com.gutinhotech.gutodelivery.domain;
 
 public abstract class AggregateRoot<ID extends Identifier> extends Entity<ID> {
 

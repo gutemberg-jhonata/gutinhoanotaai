@@ -2,6 +2,7 @@ package com.gutinhotech.gutodelivery.domain.entity;
 
 import java.time.OffsetDateTime;
 
+import com.gutinhotech.gutodelivery.domain.AggregateRoot;
 import com.gutinhotech.gutodelivery.domain.validation.CategoryValidator;
 import com.gutinhotech.gutodelivery.domain.validation.ValidationHandler;
 
