@@ -5,27 +5,27 @@ import java.time.OffsetDateTime;
 import lombok.Getter;
 
 @Getter
-public class Category2 {
-    private String id;
-    private String name;
-    private OffsetDateTime createdAt;
-    private OffsetDateTime updatedAt;
-    
+public class Category2 extends AggregateRoot<CategoryID> {
+    private final String name;
+    private final OffsetDateTime createdAt;
+    private final OffsetDateTime updatedAt;
+
     private Category2(
-        final String id, 
-        final String name, 
-        final OffsetDateTime createdAt, 
-        final OffsetDateTime updatedAt
+        final CategoryID anId, 
+        final String aName, 
+        final OffsetDateTime aCreatedAt, 
+        final OffsetDateTime aUpdatedAt
     ) {
-        this.id = id;
-        this.name = name;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        super(anId);
+        this.name = aName;
+        this.createdAt = aCreatedAt;
+        this.updatedAt = aUpdatedAt;
     }
 
     public static Category2 newCategory(final String aName) {
+        final var id = CategoryID.unique();
         final var now = OffsetDateTime.now();
-        return new Category2("1", aName, now, null);
+        return new Category2(id, aName, now, null);
     }
 
 }
