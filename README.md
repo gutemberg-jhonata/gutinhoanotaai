@@ -40,8 +40,17 @@ The documentation is avaliable by accessing the /docs endpoint. 👇
 
 ## 🚨 Patterns and Architecture?
 
+### TDD
+* The development of this projects was oriented by tests. You can execute the tests with the following command:
+```bash
+./mvnw test
+```
+
+### DDD
+* The entities of this project are oriented by the Domain Driven Design concepts.
+
 ### Architecture
-* This project employes the Clean Arquitecture. So make sure you are following the Clean Architecture structure an concepts.
+* This project employes the Clean Arquitecture. So make sure you are following the Clean Architecture structure and concepts.
 <p align="center">
   <img alt="layout" src=".github/cleanarch.png">
 </p>
