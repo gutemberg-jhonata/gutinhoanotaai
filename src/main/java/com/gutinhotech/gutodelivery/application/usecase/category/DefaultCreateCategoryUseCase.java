@@ -6,6 +6,7 @@ import com.gutinhotech.gutodelivery.application.entity.category.CategoryInput;
 import com.gutinhotech.gutodelivery.application.entity.category.CategoryOutput;
 import com.gutinhotech.gutodelivery.domain.contracts.repository.CategoryRepository;
 import com.gutinhotech.gutodelivery.domain.entity.Category2;
+import com.gutinhotech.gutodelivery.domain.validation.handler.ThrowsValidationHandler;
 
 public class DefaultCreateCategoryUseCase extends CreateCategoryUseCase {
 
@@ -18,6 +19,7 @@ public class DefaultCreateCategoryUseCase extends CreateCategoryUseCase {
     @Override
     public CategoryOutput execute(CategoryInput anIn) {
         final var category = Category2.newCategory(anIn.getName());
+        category.validate(new ThrowsValidationHandler());
         return CategoryOutput.from(this.categoryRepository.create(category));
     }
 

@@ -2,6 +2,7 @@ package com.gutinhotech.gutodelivery.application.usecase.category;
 
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -23,6 +24,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.gutinhotech.gutodelivery.application.UseCase;
 import com.gutinhotech.gutodelivery.application.entity.category.CategoryInput;
 import com.gutinhotech.gutodelivery.domain.contracts.repository.CategoryRepository;
+import com.gutinhotech.gutodelivery.domain.exception.DomainException;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 @ExtendWith(MockitoExtension.class)
@@ -35,7 +37,7 @@ public class CreateCategoryUseCaseTest {
     private DefaultCreateCategoryUseCase useCase;
 
     @Test
-    public void Given_valid_input_When_execute_than_should_return_a_valid_output() {
+    public void Given_a_valid_input_When_execute_than_should_return_a_valid_output() {
         when(categoryRepository.create(any()))
             .thenAnswer(returnsFirstArg());
         final var expectedName = "snacks";
@@ -49,6 +51,16 @@ public class CreateCategoryUseCaseTest {
                 Objects.equals(expectedName, aCategory.getName())));
         assertNotNull(output);
         assertNotNull(output.id());
+    }
+
+    @Test
+    public void Given_a_valid_name_When_execute_than_should_return_a_domain_exception() {
+        final String expectedName = null;
+        final var input = CategoryInput.with(expectedName);
+
+        assertThrows(DomainException.class, () -> useCase.execute(input));
+        verify(categoryRepository, times(0))
+            .create(any());
     }
 
 }
