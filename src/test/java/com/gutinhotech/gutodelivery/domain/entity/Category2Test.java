@@ -39,7 +39,20 @@ public class Category2Test {
     public void Given_an_invalid_null_name_When_call_new_category_and_validate_Then_should_receive_error() {
         final String name = null;
         final var expectedErrorCount = 1;
-        final var expectedErrorMessage = "name is required";
+        final var expectedErrorMessage = "name should not be null";
+
+        final var category = Category2.newCategory(name);
+
+        final var exception = assertThrows(DomainException.class, () -> category.validate(new ThrowsValidationHandler()));
+        assertEquals(expectedErrorCount, exception.getErrors().size());
+        assertEquals(expectedErrorMessage, exception.getErrors().get(0).message());
+    }
+
+    @Test
+    public void Given_an_invalid_blank_name_When_call_new_category_and_validate_Then_should_receive_error() {
+        final String name = "  ";
+        final var expectedErrorCount = 1;
+        final var expectedErrorMessage = "name should not be blank";
 
         final var category = Category2.newCategory(name);
 

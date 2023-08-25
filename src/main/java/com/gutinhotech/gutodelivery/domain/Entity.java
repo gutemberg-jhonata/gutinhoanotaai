@@ -14,7 +14,7 @@ public abstract class Entity<ID extends Identifier> {
     protected final ID id;
 
     public Entity(final ID id) {
-        Objects.requireNonNull(id, "id is required");
+        Objects.requireNonNull(id, "id should not be null");
         this.id = id;
     }
 
