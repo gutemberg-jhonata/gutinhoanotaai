@@ -4,6 +4,9 @@ import com.gutinhotech.gutodelivery.domain.entity.Category2;
 
 public class CategoryValidator extends Validator {
 
+    private static final int NAME_MIN_LENGTH = 3;
+    private static final int NAME_MAX_LENGTH = 25;
+
     private final Category2 category;
 
     public CategoryValidator(final Category2 aCategory, final ValidationHandler aHandler) {
@@ -27,7 +30,7 @@ public class CategoryValidator extends Validator {
             return;
         }
         final var length = name.trim().length();
-        if (length < 3 || length > 25) {
+        if (length < NAME_MIN_LENGTH || length > NAME_MAX_LENGTH) {
             this.validationHandler().append(new Error("name must be between 3 and 25 characters"));
         }
     }
