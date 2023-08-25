@@ -12,6 +12,7 @@ This project was developed by using the following technologies:
 * Springdoc
 * Flyway
 * Docker Compose
+* Editorconfig
 
 ## ✅ Prerequisites
 * Java 17
@@ -33,7 +34,7 @@ java -jar target/gutinhoanotaai-0.0.1-SNAPSHOT.war
 ```
 
 ## 📖 Documentation
-The documentation is avaliable by accessing the /docs endpoint. 👇 
+The documentation is avaliable by accessing the /docs endpoint. 👇
 <p align="center">
   <img alt="layout" src=".github/docs.png">
 </p>
@@ -63,6 +64,10 @@ The documentation is avaliable by accessing the /docs endpoint. 👇
 chmod +x .githooks/commit-msg
 git config core.hooksPath .githooks
 ```
+
+### Coding Styles
+* For help to maintain the coding styles on this project was used EditorConfig. Make sure you have installed EditorConfig plugin on your IDE.
+https://editorconfig.org/
 
 ## 💻 About
 
