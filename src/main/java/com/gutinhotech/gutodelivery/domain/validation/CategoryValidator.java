@@ -13,11 +13,15 @@ public class CategoryValidator extends Validator {
 
     @Override
     public void validate() {
-        if (category.getName() == null) {
+        final String name = category.getName();
+        if (name == null) {
             this.validationHandler().append(new Error("name should not be null"));
         }
-        if (category.getName().trim().length() == 0) {
+        if (name.trim().length() == 0) {
             this.validationHandler().append(new Error("name should not be blank"));
+        }
+        if (name.trim().trim().length() < 3) {
+            this.validationHandler().append(new Error("name must be between 3 and 25 characters"));
         }
     }
     

@@ -61,4 +61,17 @@ public class Category2Test {
         assertEquals(expectedErrorMessage, exception.getErrors().get(0).message());
     }
 
+    @Test
+    public void Given_an_invalid_name_with_length_less_than_3_When_call_new_category_and_validate_Then_should_receive_error() {
+        final String name = "Fi ";
+        final var expectedErrorCount = 1;
+        final var expectedErrorMessage = "name must be between 3 and 25 characters";
+
+        final var category = Category2.newCategory(name);
+
+        final var exception = assertThrows(DomainException.class, () -> category.validate(new ThrowsValidationHandler()));
+        assertEquals(expectedErrorCount, exception.getErrors().size());
+        assertEquals(expectedErrorMessage, exception.getErrors().get(0).message());
+    }
+
 }
