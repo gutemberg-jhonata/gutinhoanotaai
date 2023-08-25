@@ -49,6 +49,12 @@ The documentation is avaliable by accessing the /docs endpoint. 👇
 ### Commit Pattern
 * This project employes the Conventional Commits specification. You can take a look by this current link: https://www.conventionalcommits.org/en/v1.0.0/
 
+* Make sure you have setup your local Git Hooks:
+```bash
+chmod +x .githooks/commit-msg
+git config core.hooksPath .githooks
+```
+
 ## 💻 About
 
 This project is a backend clone base on https://pedido.anota.ai/. 👇
