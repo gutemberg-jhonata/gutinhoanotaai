@@ -25,6 +25,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.gutinhotech.gutodelivery.application.UseCase;
 import com.gutinhotech.gutodelivery.application.entity.category.CategoryInput;
+import com.gutinhotech.gutodelivery.application.usecase.category.create.DefaultCreateCategoryUseCase;
 import com.gutinhotech.gutodelivery.domain.contracts.repository.CategoryRepository;
 import com.gutinhotech.gutodelivery.domain.exception.DomainException;
 

@@ -1,4 +1,4 @@
-package com.gutinhotech.gutodelivery.application.usecase.category;
+package com.gutinhotech.gutodelivery.application.usecase.category.create;
 
 import java.util.Objects;
 
